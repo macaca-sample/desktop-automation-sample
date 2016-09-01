@@ -15,6 +15,12 @@
 
 var robot = require('robotjs');
 
+var sleep = function(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+};
+
 describe('test', function() {
   this.timeout(60 * 1000);
 
@@ -29,22 +35,24 @@ describe('test', function() {
 
     robot.moveMouse(startX, startY);
 
-    var endX = 240;
+    var endX = 420;
     var endY = height - 40;
 
-    for (var x = startX; x > endX; x--) {
-      var y = (startX - x) / (startX - endX) * (endY - startY) + startY;
-      y = parseInt(y, 10);
-      console.log('x:%s, y:%s', x, y);
-      robot.moveMouseSmooth(x, y);
-    }
+    robot.moveMouseSmooth(endX, endY);
+
   });
 
-  it('should type url', function() {
+  it('should type url', function *() {
     robot.mouseClick();
 
-    robot.typeString("https://macacajs.github.io");
+    yield sleep(2000);
 
-    robot.keyTap("enter");
+    robot.moveMouseSmooth(290, 80);
+
+    robot.mouseClick();
+
+    robot.typeString('https://macacajs.github.io');
+
+    robot.keyTap('enter');
   });
 });
