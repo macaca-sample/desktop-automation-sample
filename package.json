@@ -1,13 +1,13 @@
 {
   "name": "desktop-automation-sample",
-  "version": "0.1.0",
-  "description": "desktop-automation-sample",
+  "version": "1.0.0",
+  "description": "desktop automationsample",
   "keywords": [
-    "desktop-automation-sample"
+    "automation"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/xudafeng/desktop-automation-sample.git"
+    "url": "git://github.com/macaca-sample/desktop-automation-sample.git"
   },
   "devDependencies": {
     "co-mocha": "*",
@@ -24,9 +24,5 @@
   "pre-commit": [
     "jshint"
   ],
-  "homepage": "https://github.com/xudafeng/desktop-automation-sample",
-  "author": "xudafeng",
-  "email": "xudafeng@126.com",
-  "blog": "http://xdf.me",
   "license": "MIT"
 }
